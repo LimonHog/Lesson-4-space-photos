@@ -2,7 +2,7 @@ import requests
 import os
 import datetime
 from dotenv import load_dotenv
-from tools import *
+from tools import download_image
 
 
 

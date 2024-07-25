@@ -1,7 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
-from tools import *
+from tools import download_image
 
 
 def get_extension(url):
