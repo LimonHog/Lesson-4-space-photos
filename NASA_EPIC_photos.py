@@ -2,26 +2,14 @@ import requests
 import os
 import datetime
 from dotenv import load_dotenv
+from tools import *
 
 
-def download_image(url, filename, api_key=''):
-    if not os.path.exists("images"):
-        os.makedirs("images")
-        
-    params = {
-        'api_key' : api_key,
-    }
-    
-    response = requests.get(url, params=params)
-    response.raise_for_status()
 
-    with open(filename, 'wb') as file:
-        file.write(response.content)
 
 load_dotenv()
 api_key = os.getenv('API_KEY')
 
-#here u're "cikle" start
 params = {
     'api_key' : api_key
 }
