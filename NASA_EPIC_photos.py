@@ -7,7 +7,7 @@ from tools import download_image
 
 def main():
     load_dotenv()
-    api_key = os.getenv('API_KEY')
+    api_key = os.getenv('NASA_API_KEY')
 
     params = {
         'api_key' : api_key

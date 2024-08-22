@@ -1,13 +1,10 @@
 import requests
 import os
-from dotenv import load_dotenv
 from tools import download_image
 import argparse
 
 
 def main():
-    load_dotenv()
-    api_key = os.getenv('API_KEY')
 
     parser = argparse.ArgumentParser(description='Download ID from SpaceX')
     parser.add_argument('--ID', type=str, help='Input ID of SpaceX launch photos', default='5eb87d47ffd86e000604b38a')
