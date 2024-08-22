@@ -20,8 +20,8 @@ def main():
     response = requests.get('https://api.nasa.gov/planetary/apod', params=params)
     for picture_number, picture in enumerate(response.json()): 
         extension = get_extension(picture['url'])
-        filename = f'images/nasa_apod{picture_number}{extension}'
-        download_image(picture['url'], filename, api_key)
+        filepath =  os.path.join('images', f'nasa_apod{picture_number}{extension}')
+        download_image(picture['url'], filepath, api_key)
 
 
 if __name__ == "__main__":

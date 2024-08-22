@@ -24,7 +24,7 @@ def main():
         
         planet_url = f"https://api.nasa.gov/EPIC/archive/natural/{date[0]}/{date[1]}/{date[2]}/png/{epic_image}.png?"
         
-        download_image(planet_url, f'images/epic_photo{i}.png', api_key)
+        download_image(planet_url,  os.path.join('images', f'epic_photo{i}.png'), api_key)
 
 
 if __name__ == "__main__":

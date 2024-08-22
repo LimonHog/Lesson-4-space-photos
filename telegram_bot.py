@@ -10,7 +10,7 @@ def main():
     load_dotenv()
     bot_token = os.environ['TELEGRAM_TOKEN']
     bot = telegram.Bot(token=bot_token)
-    chat_id="@download_photos"
+    chat_id= os.environ['TG_CHAT_ID']
 
     parser = argparse.ArgumentParser(description='Отправляет случайное изобранеи в Телеграм')
     parser.add_argument(
@@ -25,7 +25,7 @@ def main():
         for dirpath, dirnames, filenames in os.walk('images'):
         
             random.shuffle(filenames)
-            with open(f"images/{filenames[0]}", 'rb') as photo_id:
+            with open( os.path.join("images", filenames[0]), 'rb') as photo_id:
                 bot.send_photo(chat_id=chat_id, photo=photo_id) 
             time.sleep(2)
         time.sleep(parser_period.frequence)
