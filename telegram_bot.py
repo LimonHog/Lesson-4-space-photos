@@ -8,7 +8,7 @@ import argparse
 
 def main():
     load_dotenv()
-    bot_token = os.getenv('TELEGRAM_TOKEN')
+    bot_token = os.environ['TELEGRAM_TOKEN']
     bot = telegram.Bot(token=bot_token)
     chat_id="@download_photos"
 

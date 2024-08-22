@@ -10,7 +10,7 @@ def get_extension(url):
 
 def main():
     load_dotenv()
-    api_key = os.getenv('NASA_API_KEY')
+    api_key = os.environ['NASA_API_KEY']
 
     params = {
             'api_key' : api_key,
