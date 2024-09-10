@@ -16,9 +16,11 @@ def main():
     for i in range(10):
         url = 'https://api.nasa.gov/EPIC/api/natural/images'
         response = requests.get(url, params=params)
-        epic_image = response.json()[i]['image']
+
+        earth_change_info = response.json()
+        epic_image = earth_change_info[i]['image']
         
-        date = response.json()[0]['date']
+        date = earth_change_info[0]['date']
         date = date.split()
         date = date[0].split('-')
         
