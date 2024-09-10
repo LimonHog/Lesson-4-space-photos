@@ -3,8 +3,7 @@ import os
 
 
 def download_image(url, filename, api_key=''):
-    if not os.path.exists("images"):
-        os.makedirs("images")
+    os.makedirs("images", exist_ok=True)
         
     params = {
         'api_key' : api_key,
