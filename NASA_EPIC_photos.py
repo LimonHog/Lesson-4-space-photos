@@ -3,7 +3,7 @@ import os
 import datetime
 from dotenv import load_dotenv
 from tools import download_image
-from datetime import datetime, date, time, timezone
+from datetime import datetime, date, time
 
 
 def main():
