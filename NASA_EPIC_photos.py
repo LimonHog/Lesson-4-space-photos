@@ -3,6 +3,7 @@ import os
 import datetime
 from dotenv import load_dotenv
 from tools import download_image
+from datetime import datetime, date, time, timezone
 
 
 def main():
@@ -21,10 +22,11 @@ def main():
         epic_image = image['image']
         
         date = earth_change_info[0]['date']
-        date = date.split()
-        date = date[0].split('-')
-        
-        planet_url = f"https://api.nasa.gov/EPIC/archive/natural/{date[0]}/{date[1]}/{date[2]}/png/{epic_image}.png?"
+        date = datetime.fromisoformat(date)
+
+        date = datetime.strftime(date, '%y/%m/%d')
+
+        planet_url = f"https://api.nasa.gov/EPIC/archive/natural/20{date}/png/{epic_image}.png?"
         
         download_image(planet_url,  os.path.join('images', f'epic_photo{image_number}.png'), api_key)
        
