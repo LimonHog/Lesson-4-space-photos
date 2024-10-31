@@ -10,7 +10,7 @@ def main():
     load_dotenv()
     bot_token = os.environ['TELEGRAM_TOKEN']
     bot = telegram.Bot(token=bot_token)
-    chat_id= os.environ['TG_CHAT_ID']
+    chat_id= os.environ['TELEGRAM_CHAT_ID']
 
     parser = argparse.ArgumentParser(description='Отправляет случайное изображение в Телеграм')
     parser.add_argument(
