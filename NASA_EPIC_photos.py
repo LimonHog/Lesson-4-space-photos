@@ -24,9 +24,9 @@ def main():
         date = earth_change_info[0]['date']
         date = datetime.fromisoformat(date)
 
-        date = datetime.strftime(date, '%y/%m/%d')
+        date = datetime.strftime(date, '%Y/%m/%d')
 
-        planet_url = f"https://api.nasa.gov/EPIC/archive/natural/20{date}/png/{epic_image}.png?"
+        planet_url = f"https://api.nasa.gov/EPIC/archive/natural/{date}/png/{epic_image}.png?"
         
         download_image(planet_url,  os.path.join('images', f'epic_photo{image_number}.png'), api_key)
        
