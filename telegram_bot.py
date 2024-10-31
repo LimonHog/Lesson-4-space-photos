@@ -12,7 +12,7 @@ def main():
     bot = telegram.Bot(token=bot_token)
     chat_id= os.environ['TG_CHAT_ID']
 
-    parser = argparse.ArgumentParser(description='Отправляет случайное изобранеи в Телеграм')
+    parser = argparse.ArgumentParser(description='Отправляет случайное изображение в Телеграм')
     parser.add_argument(
         '--frequence',
         type=int,
